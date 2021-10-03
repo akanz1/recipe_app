@@ -236,7 +236,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.*"
-content-hash = "59a03fd3a9ea8768039765dc6f0c98cd42d1dcdfe7b3969493f75e150e3435b0"
+content-hash = "95c084bc012001506dd53f810e466db82f8fd2046f9bfa5fc38914c28aea477f"
 
 [metadata.files]
 asgiref = [
