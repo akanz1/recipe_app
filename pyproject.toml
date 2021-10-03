@@ -2,7 +2,7 @@
 name = "recipe_app"
 version = "0.1.0"
 description = "Webapp with django backend for recipes"
-authors = ["Andreas Kanz <andreas@akanz.de>"]
+authors = ["Andreas Kanz <andreas@akanz.de>", "Jerika Kanz <jerikacapila@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
