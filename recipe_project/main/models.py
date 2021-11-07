@@ -1,5 +1,16 @@
+from datetime import date
+from pathlib import Path
+
 from autoslug import AutoSlugField
 from django.db import models
+
+
+def _content_file_name(instance: models.Model, filename: str) -> Path:
+    extension = filename.split(".")[-1]
+    today = date.today().strftime("%Y%m%d")
+    filename = f"{today}_{instance.title}.{extension}".lower()
+    folder = instance.__class__.__name__.lower()
+    return Path("images") / folder / filename
 
 
 class Ingredient(models.Model):
@@ -7,7 +18,7 @@ class Ingredient(models.Model):
     description = models.TextField(blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to="images/", blank=True, null=True)
+    image = models.ImageField(upload_to=_content_file_name, blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -22,7 +33,7 @@ class Recipe(models.Model):
     time_required = models.PositiveBigIntegerField()
     date_added = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to="images/", blank=True, null=True)
+    image = models.ImageField(upload_to=_content_file_name, blank=True, null=True)
 
     def __str__(self):
         return self.title
