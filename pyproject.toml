@@ -7,7 +7,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "3.9.*"
-Django = "^3.2.16"
+Django = "^3.2.17"
 black = "^21.9b0"
 pylint = "^2.11.1"
 Pillow = "^9.3.0"
